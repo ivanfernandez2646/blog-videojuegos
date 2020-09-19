@@ -1,0 +1,131 @@
+@font-face {
+    font-family: pageFont;
+    src: url('../fonts/fuente.ttf');
+}
+
+html, body{
+    font-family: pageFont, serif;
+    background-image: url('../img/cubes.png');
+    margin-left: 75px;
+    margin-right: 75px;
+}
+
+/* HEADER */
+
+.title{
+    color: dodgerblue;
+    text-shadow: 2px 2px black;
+    letter-spacing: 3px;
+}
+
+/* NAV */
+
+.nav-main-menu{
+    margin-top: 30px;
+    background: -webkit-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.ul-main-menu{
+    padding: 10px 10px 10px 0;
+    margin: 0;
+}
+
+.ul-main-menu li{
+    display: inline-block;
+    vertical-align: center;
+}
+
+.ul-main-menu li a{
+    font-family: Arial, serif;
+    font-size: 14px;
+    padding: 10px;
+    border-right: 2px solid black;
+    text-decoration: none;
+    color: black;
+}
+
+/* DIV COMÚN BOX SHADOWS */
+
+.box-shadows{
+    background: #F3F3F3;
+    border-radius: 5px;
+    -webkit-box-shadow: 10px 2px 74px 0 rgba(204,204,204,1);
+    -moz-box-shadow: 10px 2px 74px 0 rgba(204,204,204,1);
+    box-shadow: 10px 2px 74px 0 rgba(204,204,204,1);
+}
+
+.box-shadows *{
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.box-shadows form{
+    margin-left: 0;
+}
+
+/* MAIN */
+
+main{
+    margin-top: 20px;
+    display: flex;
+}
+
+.latest_posts{
+    margin-right: 20px;
+}
+
+.latest_posts article{
+    margin-left: 0;
+}
+
+.latest_posts h2{
+    padding-top: 20px;
+    margin-bottom: 30px;
+}
+
+.latest_posts article{
+    padding: 0 10px 10px 0;
+}
+
+.latest_posts article h3{
+    color: dodgerblue;
+    margin-top: 0;
+}
+
+/* ASIDE LOG-IN SIGN-IN */
+.form-log-sign-in h4{
+    margin-top: 0;
+    padding-top: 10px;
+}
+
+.form-log-sign-in input[type=submit]{
+    background-color: dodgerblue;
+    color: white;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.form-log-sign-in label{
+    font-family: Arial, "serif";
+    font-size: 14px;
+}
+
+.form-log-sign-in input[type=text]{
+    height: 22px;
+    margin-bottom: 10px;
+}
+
+.form-log-sign-in input[type=password]{
+    height: 22px;
+    margin-bottom: 10px;
+}
+
+.sign-in{
+    margin-top: 20px;
+}
+
+
+
