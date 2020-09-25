@@ -127,5 +127,31 @@ main{
     margin-top: 20px;
 }
 
+.sign-in-ok{
+    background-color: green;
+}
+
+.sign-in-ko{
+    background-color: red;
+}
+
+.log-in-ok{
+    background-color: green;
+}
+
+.log-in-ko{
+    background-color: red;
+}
+
+/* FOOTER */
+footer{
+    margin-bottom: 0;
+}
+
+footer p{
+    text-align: center;
+    background: #F3F3F3;
+    background: -webkit-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+}
 
 

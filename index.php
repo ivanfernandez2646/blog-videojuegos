@@ -7,21 +7,9 @@
     </head>
     <body>
         <!-- HEADER -->
-        <header>
-            <h1 class="title">Blog de Videojuegos</h1>
-        </header>
+        <?php require_once('./header.php'); ?>
         <!-- NAV -->
-        <nav class="nav-main-menu">
-            <ul class="ul-main-menu">
-                <li><a href="#">Inicio</a></li><!--
-                --><li><a href="#">Categoría 1</a></li><!--
-                --><li><a href="#">Categoría 2</a></li><!--
-                --><li><a href="#">Categoría 3</a></li><!--
-                --><li><a href="#">Categoría 4</a></li><!--
-                --><li><a href="#">Sobre nosotros</a></li><!--
-                --><li><a href="#">Contacto</a></li>
-            </ul>
-        </nav>
+        <?php require_once('./nav.php'); ?>
         <!-- MAIN -->
         <main>
             <section class="latest_posts box-shadows">
@@ -48,48 +36,10 @@
                     </p>
                 </article>
             </section>
-            <aside class="right-menu">
-                <article class="form-log-sign-in box-shadows">
-                    <h4>Identifícate</h4>
-                    <form id="formLogin" action="log-in.php" method="POST">
-                        <label for="txtEmail">Email:</label>
-                        <br/>
-                        <input type="text" id="txtEmail" name="txtEmail">
-                        <br/>
-                        <label for="txtPassword">Contraseña:</label>
-                        <br/>
-                        <input type="password" id="txtPassword" name="txtPassword">
-                        <br/>
-                        <input type="submit" value="Entrar">
-                    </form>
-                </article>
-                <article class="form-log-sign-in sign-in box-shadows">
-                    <h4>Regístrate</h4>
-                    <form id="formLogin" action="sign-in.php" method="POST">
-                        <label for="txtName">Nombre:</label>
-                        <br/>
-                        <input type="text" id="txtName" name="txtName">
-                        <br/>
-                        <label for="txtSurname">Apellidos:</label>
-                        <br/>
-                        <input type="text" id="txtSurname" name="txtSurname">
-                        <br/>
-                        <label for="txtEmail">Email:</label>
-                        <br/>
-                        <input type="text" id="txtEmail" name="txtEmail">
-                        <br/>
-                        <label for="txtPassword">Contraseña:</label>
-                        <br/>
-                        <input type="password" id="txtPassword" name="txtPassword">
-                        <br/>
-                        <input type="submit" value="Registrar">
-                    </form>
-                </article>
-            </aside>
+
+            <?php require_once('./right-menu.php'); ?>
         </main>
         <!-- FOOTER -->
-        <footer>
-
-        </footer>
+        <?php require_once('./footer.php'); ?>
     </body>
 </html>
