@@ -143,6 +143,15 @@ main{
     background-color: red;
 }
 
+#welcomeUser button{
+    background-color: dodgerblue;
+    color: white;
+    height: 30px;
+    width: 200px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
 /* FOOTER */
 footer{
     margin-bottom: 0;

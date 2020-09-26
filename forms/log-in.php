@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $dbHost = 'localhost';
 $dbUser = 'root';
@@ -7,20 +8,23 @@ $dbDataBase = 'blog_videojuegos';
 $dbPort = 3307;
 
 $connDb = mysqli_connect($dbHost, $dbUser, $dbPassword, $dbDataBase, $dbPort);
+$connDb -> set_charset("utf8");
 
 function logInUser($email, $password){
     global $connDb;
 
-    $stmt = $connDb -> prepare("SELECT COUNT(*) AS userExists FROM users WHERE email = ? AND password = (SELECT SHA1(?)) GROUP BY email, password");
+    $stmt = $connDb -> prepare("SELECT id, name, surname, email FROM users WHERE email = ? AND password = (SELECT SHA1(?))");
     $stmt -> bind_param('ss', $email, $password);
 
     $stmt -> execute();
-    $stmt -> bind_result($userExists);
+    $stmt -> bind_result($idRes, $nameRes, $surnameRes, $emailRes);
 
     while($stmt -> fetch()){
-        if($userExists){
-            return true;
-        }
+        $_SESSION['idUser'] = $idRes;
+        $_SESSION['nameUser'] = $nameRes;
+        $_SESSION['surnameUser'] = $surnameRes;
+        $_SESSION['emailRes'] = $emailRes;
+        return true;
     }
 
     return false;
@@ -36,10 +40,17 @@ if(!empty($_POST['txtEmail'])
         $res = logInUser($email, $password);
 
         if($res){
-            header("Location: ./../index.php?l=1");
+            $_SESSION['login'] = true;
+            header("Location: ./../index.php");
         }else{
-            header("Location: ./../index.php?l=-1");
+            $_SESSION['login'] = false;
+            header("Location: ./../index.php");
         }
+    }else{
+        echo 'ERROR connecting MariaDB '.mysqli_connect_errno();
+        echo mysqli_connect_error();
+        $_SESSION['login'] = false;
+        header("Location: ./../index.php");
     }
 }else{
     echo 'Please, fill all mandatory fields';

@@ -7,7 +7,10 @@
     <list default="true" id="3e5b8e62-ec5a-4d54-ae1a-5cae63e1eadb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forms/log-in.php" beforeDir="false" afterPath="$PROJECT_DIR$/forms/log-in.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forms/sign-in.php" beforeDir="false" afterPath="$PROJECT_DIR$/forms/sign-in.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/right-menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/right-menu.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +44,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="database.main" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -55,6 +59,8 @@
       <workItem from="1600521151416" duration="6788000" />
       <workItem from="1600597853184" duration="5068000" />
       <workItem from="1601033371820" duration="7237000" />
+      <workItem from="1601118851036" duration="11000" />
+      <workItem from="1601118991334" duration="8676000" />
     </task>
     <servers />
   </component>
@@ -94,6 +100,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600603758819" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1601119527039">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1601119527039" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1601132179852">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601132179852" />
     <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1600516087871">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

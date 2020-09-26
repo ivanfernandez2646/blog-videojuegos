@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $dbHost = 'localhost';
 $dbUser = 'root';
@@ -7,6 +8,7 @@ $dbDataBase = 'blog_videojuegos';
 $dbPort = 3307;
 
 $connDb = mysqli_connect($dbHost, $dbUser, $dbPassword, $dbDataBase, $dbPort);
+$connDb -> set_charset("utf8");
 
 function registerUser($name, $surname, $email, $password){
     global $connDb;
@@ -31,14 +33,17 @@ if (!empty($_POST['txtName'])
         $res = registerUser($name, $surname, $email, $password);
 
         if($res){
-            header("Location: ./../index.php?r=1");
+            $_SESSION['register'] = true;
+            header("Location: ./../index.php");
         }else{
-            header("Location: ./../index.php?r=-1");
+            $_SESSION['register'] = false;
+            header("Location: ./../index.php");
         }
     }else{
         echo 'ERROR connecting MariaDB '.mysqli_connect_errno();
         echo mysqli_connect_error();
-        header("Location: ./../index.php?r=0");
+        $_SESSION['register'] = false;
+        header("Location: ./../index.php");
     }
 }else{
     echo 'Please, fill all mandatory fields';
