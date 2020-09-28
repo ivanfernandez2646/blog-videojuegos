@@ -1,14 +1,8 @@
 <?php
+require_once ('../includes/helpers.php');
 session_start();
 
-$dbHost = 'localhost';
-$dbUser = 'root';
-$dbPassword = 'root1234';
-$dbDataBase = 'blog_videojuegos';
-$dbPort = 3307;
-
-$connDb = mysqli_connect($dbHost, $dbUser, $dbPassword, $dbDataBase, $dbPort);
-$connDb -> set_charset("utf8");
+$connDb = getConn();
 
 function logInUser($email, $password){
     global $connDb;

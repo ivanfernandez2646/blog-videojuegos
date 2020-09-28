@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
-    <file url="file://$PROJECT_DIR$/blog-videojuegos.sql" dialect="MariaDB" />
+    <file url="file://$PROJECT_DIR$/assets/blog-videojuegos.sql" dialect="MariaDB" />
+    <file url="file://$PROJECT_DIR$/forms/add-category.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/forms/log-in.php" dialect="MariaDB" />
     <file url="file://$PROJECT_DIR$/forms/sign-in.php" dialect="MariaDB" />
+    <file url="file://$PROJECT_DIR$/includes/helpers.php" dialect="MariaDB" />
   </component>
 </project>

@@ -1,4 +1,10 @@
+<!-- WARNING -- All forms and calls to different php files and resources
+    are called since index.php. So, you can see some warnings with paths.
+    It doesn't matter. I prefer this methodology for make this app.
+    (Exception with calls from 'forms' directory).
+-->
 <?php
+    require_once ('./includes/helpers.php');
     session_start();
 ?>
 <!DOCTYPE html>
@@ -10,12 +16,12 @@
     </head>
     <body>
         <!-- HEADER -->
-        <?php require_once('./header.php'); ?>
+        <?php require_once('./includes/header.php'); ?>
         <!-- NAV -->
-        <?php require_once('./nav.php'); ?>
+        <?php require_once('./includes/nav.php'); ?>
         <!-- MAIN -->
         <main>
-            <section class="latest_posts box-shadows">
+            <section class="main-left box-shadows">
                 <h2>Últimas Entradas</h2>
                 <article class="post">
                     <h3 class="title-post">Título de mi entrada</h3>
@@ -39,10 +45,9 @@
                     </p>
                 </article>
             </section>
-
-            <?php require_once('./right-menu.php'); ?>
+            <?php require_once('./includes/right-menu.php'); ?>
         </main>
         <!-- FOOTER -->
-        <?php require_once('./footer.php'); ?>
+        <?php require_once('./includes/footer.php'); ?>
     </body>
 </html>

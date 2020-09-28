@@ -11,7 +11,6 @@ html, body{
 }
 
 /* HEADER */
-
 .title{
     color: dodgerblue;
     text-shadow: 2px 2px black;
@@ -19,7 +18,6 @@ html, body{
 }
 
 /* NAV */
-
 .nav-main-menu{
     margin-top: 30px;
     background: -webkit-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
@@ -47,7 +45,6 @@ html, body{
 }
 
 /* DIV COMÚN BOX SHADOWS */
-
 .box-shadows{
     background: #F3F3F3;
     border-radius: 5px;
@@ -66,30 +63,30 @@ html, body{
 }
 
 /* MAIN */
-
 main{
     margin-top: 20px;
     display: flex;
 }
 
-.latest_posts{
+.main-left{
     margin-right: 20px;
+    flex-grow: 1;
 }
 
-.latest_posts article{
+.main-left article{
     margin-left: 0;
 }
 
-.latest_posts h2{
+.main-left h2{
     padding-top: 20px;
     margin-bottom: 30px;
 }
 
-.latest_posts article{
+.main-left article{
     padding: 0 10px 10px 0;
 }
 
-.latest_posts article h3{
+.main-left article h3{
     color: dodgerblue;
     margin-top: 0;
 }
@@ -113,12 +110,9 @@ main{
     font-size: 14px;
 }
 
-.form-log-sign-in input[type=text]{
-    height: 22px;
-    margin-bottom: 10px;
-}
-
-.form-log-sign-in input[type=password]{
+.form-log-sign-in input[type=text],
+input[type=email],
+input[type=password]{
     height: 22px;
     margin-bottom: 10px;
 }
@@ -143,14 +137,66 @@ main{
     background-color: red;
 }
 
-#welcomeUser button{
-    background-color: dodgerblue;
+#formLogOut input[type=submit]{
     color: white;
-    height: 30px;
+    height: 40px;
     width: 200px;
     margin-top: 0;
     margin-bottom: 10px;
 }
+
+#welcomeUser a{
+    display: block;
+    color: black;
+    text-decoration: none;
+    vertical-align: middle;
+    text-align: center;
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+
+#aLogOut{
+    background-color: dodgerblue;
+    width: 300px;
+}
+
+#aCreateArticle{
+    background-color: green;
+}
+
+#aCreateCategory{
+    background-color: aqua;
+}
+
+#aMyData{
+    background-color: darkorange;
+}
+
+
+/* CREATE CATEGORY */
+#formCreateCategory{
+    margin-top: 30px;
+}
+
+#formCreateCategory input[type=text]{
+    width: 95%;
+    height: 25px;
+    margin-top: 10px;
+}
+
+#formCreateCategory input[type=submit]{
+    background-color: dodgerblue;
+    color: white;
+    height: 40px;
+    width: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    float: right;
+    margin-right: 40px;
+}
+
 
 /* FOOTER */
 footer{
@@ -164,3 +210,7 @@ footer p{
 }
 
 
+/* GENERALES */
+button, input[type=submit]{
+    cursor: pointer;
+}
