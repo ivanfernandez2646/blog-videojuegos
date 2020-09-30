@@ -23,27 +23,17 @@
         <main>
             <section class="main-left box-shadows">
                 <h2>Últimas Entradas</h2>
-                <article class="post">
-                    <h3 class="title-post">Título de mi entrada</h3>
-                    <p class="p-post">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sem erat, tincidunt ut luctus sit amet,
-                        imperdiet at turpis. Phasellus ullamcorper, justo ac dignissim imperdiet, nisl nunc lacinia ante, id volutpat nibh nibh et magna.
-                    </p>
-                </article>
-                <article class="post">
-                    <h3 class="title-post">Título de mi entrada</h3>
-                    <p class="p-post">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sem erat, tincidunt ut luctus sit amet,
-                        imperdiet at turpis. Phasellus ullamcorper, justo ac dignissim imperdiet, nisl nunc lacinia ante, id volutpat nibh nibh et magna.
-                    </p>
-                </article>
-                <article class="post">
-                    <h3 class="title-post">Título de mi entrada</h3>
-                    <p class="p-post">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sem erat, tincidunt ut luctus sit amet,
-                        imperdiet at turpis. Phasellus ullamcorper, justo ac dignissim imperdiet, nisl nunc lacinia ante, id volutpat nibh nibh et magna.
-                    </p>
-                </article>
+                <?php
+                    $articles = getArticles();
+                    foreach($articles as $article):
+                ?>
+                    <article class="post">
+                        <h3 class="title-post"><?=$article['title']?></h3>
+                        <p class="p-post">
+                            <?=$article['description']?>
+                        </p>
+                    </article>
+                <?php endforeach;?>
             </section>
             <?php require_once('./includes/right-menu.php'); ?>
         </main>

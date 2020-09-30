@@ -22,10 +22,10 @@ function getCategories(){
     if($connDb){
         $stmt = $connDb -> prepare("SELECT * FROM categories ORDER BY name ASC");
         $stmt -> execute();
-        $stmt -> bind_result($idCategory, $nameCategory);
+        $result = $stmt -> get_result();
 
-        while($stmt -> fetch()){
-            $categories[] = $nameCategory;
+        while($row = $result -> fetch_assoc()){
+            $categories[] = $row;
         }
     }
 
@@ -37,6 +37,15 @@ function getArticles(){
     $connDb = getConn();
 
     $articles = array();
+    if($connDb){
+        $stmt = $connDb -> prepare("SELECT * FROM articles ORDER BY datePublication DESC");
+        $stmt -> execute();
+        $result = $stmt -> get_result();
+
+        while($row = $result -> fetch_assoc()){
+            $articles[] = $row;
+        }
+    }
 
     return $articles;
 }

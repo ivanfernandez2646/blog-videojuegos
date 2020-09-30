@@ -158,40 +158,57 @@ input[type=password]{
 }
 
 #aLogOut{
-    background-color: dodgerblue;
+    background-color: red;
     width: 300px;
 }
 
 #aCreateArticle{
     background-color: green;
+    width: 300px;
 }
 
 #aCreateCategory{
-    background-color: aqua;
+    background-color: dodgerblue;
+    width: 300px;
 }
 
 #aMyData{
     background-color: darkorange;
+    width: 300px;
 }
 
 
 /* CREATE CATEGORY */
-#formCreateCategory{
+.formCreate{
     margin-top: 30px;
 }
 
-#formCreateCategory input[type=text]{
+.formCreate select{
+    height: 40px;
+    width: 150px;
+    text-align-last: center;
+}
+
+.formCreate input[type=text]{
     width: 95%;
     height: 25px;
     margin-top: 10px;
+    margin-bottom: 15px;
 }
 
-#formCreateCategory input[type=submit]{
+.formCreate textarea{
+    width: 95%;
+    height: 100px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.formCreate input[type=submit]{
     background-color: dodgerblue;
     color: white;
     height: 40px;
     width: 200px;
-    margin-top: 10px;
+    margin-top: 5px;
     margin-bottom: 10px;
     float: right;
     margin-right: 40px;

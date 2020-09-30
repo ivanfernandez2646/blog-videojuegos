@@ -24,7 +24,7 @@ CREATE TABLE articles(
     category_id int not null,
     title varchar(100) not null,
     description varchar(50000),
-    datePublication date not null,
+    datePublication date not null default date(now()),
     CONSTRAINT pk_idArticle PRIMARY KEY(id),
     CONSTRAINT fk_articles_users FOREIGN KEY(user_id) REFERENCES users(id),
     CONSTRAINT fk_articles_categories FOREIGN KEY(category_id) REFERENCES categories(id) ON DELETE NO ACTION

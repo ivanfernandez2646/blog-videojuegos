@@ -1095,6 +1095,7 @@
       <Position>6</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
+      <DefaultExpression>cast(current_timestamp() as date)</DefaultExpression>
     </column>
     <index id="349" parent="340" name="fk_articles_users">
       <ColNames>user_id</ColNames>

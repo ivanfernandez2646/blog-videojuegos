@@ -10,7 +10,7 @@
     ?>
                 <article id="welcomeUser" class ="form-log-sign-in box-shadows">
                     <h4>Bienvenido, <?=$_SESSION['nameUser'].' '.$_SESSION['surnameUser']?></h4>
-                    <a id="aCreateArticle" href="./includes/create-article.php">Crear entrada</a>
+                    <a id="aCreateArticle" href="./create-article.php">Crear entrada</a>
                     <a id="aCreateCategory" href="./create-category.php">Crear categoría</a>
                     <a id="aMyData" href="./includes/my-data.php">Mis datos</a>
                     <a id="aLogOut" href="./includes/log-out.php">Cerrar sesión</a>
