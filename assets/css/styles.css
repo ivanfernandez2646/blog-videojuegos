@@ -89,6 +89,13 @@ main{
 .main-left article h3{
     color: dodgerblue;
     margin-top: 0;
+    margin-bottom: 0;
+}
+
+.p-info-post{
+    margin-top: 3px;
+    font-family: Arial, "serif";
+    font-size: 12px;
 }
 
 /* ASIDE LOG-IN SIGN-IN */

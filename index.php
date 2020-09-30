@@ -29,6 +29,7 @@
                 ?>
                     <article class="post">
                         <h3 class="title-post"><?=$article['title']?></h3>
+                        <p class="p-info-post"><?=$article['datePublication'].' - '.$article['nameCategory'].' - '.$_SESSION['nameUser'].' '.$_SESSION['surnameUser']?></p>
                         <p class="p-post">
                             <?=$article['description']?>
                         </p>

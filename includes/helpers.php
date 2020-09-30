@@ -38,7 +38,9 @@ function getArticles(){
 
     $articles = array();
     if($connDb){
-        $stmt = $connDb -> prepare("SELECT * FROM articles ORDER BY datePublication DESC");
+        $stmt = $connDb -> prepare("SELECT a.id, a.title, a.description, DATE_FORMAT(a.datePublication,'%d/%m/%Y') as 'datePublication', c.name as 'nameCategory' FROM articles a 
+                                    INNER JOIN categories c on a.category_id = c.id 
+                                    ORDER BY datePublication DESC");
         $stmt -> execute();
         $result = $stmt -> get_result();
 
