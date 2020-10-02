@@ -33,14 +33,29 @@ function getCategories(){
 }
 
 //ARTICLES
-function getArticles(){
+function getArticles($categoryFilter = null){
     $connDb = getConn();
 
     $articles = array();
     if($connDb){
-        $stmt = $connDb -> prepare("SELECT a.id, a.title, a.description, DATE_FORMAT(a.datePublication,'%d/%m/%Y') as 'datePublication', c.name as 'nameCategory' FROM articles a 
-                                    INNER JOIN categories c on a.category_id = c.id 
-                                    ORDER BY datePublication DESC");
+
+        if($categoryFilter == null){
+            $sql = "SELECT a.id, a.title, a.description, DATE_FORMAT(a.datePublication,'%d/%m/%Y') as 'datePublication', c.name as 'nameCategory' FROM articles a 
+                    INNER JOIN categories c on a.category_id = c.id 
+                    ORDER BY a.datePublication DESC";
+        }else{
+            $sql = "SELECT a.id, a.title, a.description, DATE_FORMAT(a.datePublication,'%d/%m/%Y') as 'datePublication', c.name as 'nameCategory' FROM articles a 
+                    INNER JOIN categories c on a.category_id = c.id 
+                    WHERE c.id = ?
+                    ORDER BY a.datePublication DESC";
+        }
+
+        $stmt = $connDb -> prepare($sql);
+
+        if($categoryFilter != null){
+            $stmt -> bind_param('i', $categoryFilter);
+        }
+
         $stmt -> execute();
         $result = $stmt -> get_result();
 

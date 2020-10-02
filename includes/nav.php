@@ -5,7 +5,7 @@
             $categories = getCategories();
             foreach ($categories as $category):
         ?>
-        --><li><a href="#"><?=$category['name']?></a></li><!--
+        --><li><a href="./index.php?category=<?=$category['id']?>"><?=$category['name']?></a></li><!--
         <?php endforeach;?>
         --><li><a href="#">Sobre nosotros</a></li><!--
         --><li><a href="#">Contacto</a></li>

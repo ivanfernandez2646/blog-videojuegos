@@ -24,12 +24,19 @@
             <section class="main-left box-shadows">
                 <h2>Últimas Entradas</h2>
                 <?php
-                    $articles = getArticles();
+                    if(!empty($_GET['category'])){
+                        $articles = getArticles($_GET['category']);
+                    }else{
+                        $articles = getArticles();
+                    }
+
                     foreach($articles as $article):
                 ?>
                     <article class="post">
                         <h3 class="title-post"><?=$article['title']?></h3>
-                        <p class="p-info-post"><?=$article['datePublication'].' - '.$article['nameCategory'].' - '.$_SESSION['nameUser'].' '.$_SESSION['surnameUser']?></p>
+                        <?php if (isset($_SESSION['sessionActive'])):?>
+                            <p class="p-info-post"><?=$article['datePublication'].' - '.$article['nameCategory'].' - '.$_SESSION['nameUser'].' '.$_SESSION['surnameUser']?></p>
+                        <?php endif;?>
                         <p class="p-post">
                             <?=$article['description']?>
                         </p>

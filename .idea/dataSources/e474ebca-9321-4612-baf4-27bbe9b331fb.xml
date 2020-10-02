@@ -1093,9 +1093,9 @@
     </column>
     <column id="348" parent="340" name="datePublication">
       <Position>6</Position>
-      <DataType>date|0s</DataType>
+      <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
-      <DefaultExpression>cast(current_timestamp() as date)</DefaultExpression>
+      <DefaultExpression>current_timestamp()</DefaultExpression>
     </column>
     <index id="349" parent="340" name="fk_articles_users">
       <ColNames>user_id</ColNames>

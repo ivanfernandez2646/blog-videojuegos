@@ -19,7 +19,7 @@ session_start();
         <section class="main-left box-shadows">
             <h2>Crear categorías</h2>
             <p>Añade nuevas categorías al blog para que los usuarios puedan usarlas al crear sus entradas.</p>
-            <form id="formCreateCategory" class="formCreate" action="./forms/add-category" method="GET">
+            <form id="formCreateCategory" class="formGeneric" action="./forms/add-category.php" method="GET">
                 <label for="nameCategory">Nombre de la categoría:</label>
                 <br/>
                 <input id="nameCategory" name="nameCategory" type="text" required>

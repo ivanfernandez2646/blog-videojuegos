@@ -14,10 +14,11 @@ function logInUser($email, $password){
     $stmt -> bind_result($idRes, $nameRes, $surnameRes, $emailRes);
 
     while($stmt -> fetch()){
+        $_SESSION['sessionActive'] = true;
         $_SESSION['idUser'] = $idRes;
         $_SESSION['nameUser'] = $nameRes;
         $_SESSION['surnameUser'] = $surnameRes;
-        $_SESSION['emailRes'] = $emailRes;
+        $_SESSION['emailUser'] = $emailRes;
         return true;
     }
 

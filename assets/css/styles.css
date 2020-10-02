@@ -17,6 +17,15 @@ html, body{
     letter-spacing: 3px;
 }
 
+.title a{
+    text-decoration: dodgerblue;
+    color: inherit;
+}
+
+.title a:hover{
+    color: indianred;
+}
+
 /* NAV */
 .nav-main-menu{
     margin-top: 30px;
@@ -118,8 +127,8 @@ main{
 }
 
 .form-log-sign-in input[type=text],
-input[type=email],
-input[type=password]{
+.form-log-sign-in input[type=email],
+.form-log-sign-in input[type=password]{
     height: 22px;
     margin-bottom: 10px;
 }
@@ -186,31 +195,32 @@ input[type=password]{
 
 
 /* CREATE CATEGORY */
-.formCreate{
+.formGeneric{
     margin-top: 30px;
 }
 
-.formCreate select{
+.formGeneric select{
     height: 40px;
     width: 150px;
     text-align-last: center;
 }
 
-.formCreate input[type=text]{
+.formGeneric input[type=text],
+.formGeneric input[type=email]{
     width: 95%;
     height: 25px;
     margin-top: 10px;
     margin-bottom: 15px;
 }
 
-.formCreate textarea{
+.formGeneric textarea{
     width: 95%;
     height: 100px;
     margin-top: 10px;
     margin-bottom: 15px;
 }
 
-.formCreate input[type=submit]{
+.formGeneric input[type=submit]{
     background-color: dodgerblue;
     color: white;
     height: 40px;
@@ -220,7 +230,6 @@ input[type=password]{
     float: right;
     margin-right: 40px;
 }
-
 
 /* FOOTER */
 footer{

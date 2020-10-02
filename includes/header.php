@@ -1,3 +1,3 @@
 <header>
-    <h1 class="title">Blog de Videojuegos</h1>
+    <h1 class="title"><a href="./index.php">Blog de Videojuegos</a></h1>
 </header>

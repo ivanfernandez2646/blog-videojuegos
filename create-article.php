@@ -19,7 +19,7 @@ session_start();
         <section class="main-left box-shadows">
             <h2>Crear entradas</h2>
             <p>Añade nuevas entradas al blog.</p>
-            <form id="formCreateArticle" class="formCreate" action="./forms/add-article.php" method="POST">
+            <form id="formCreateArticle" class="formGeneric" action="./forms/add-article.php" method="POST">
                 <label for="titleArticle">Título:</label>
                 <br/>
                 <input id="titleArticle" name="titleArticle" type="text" required>
