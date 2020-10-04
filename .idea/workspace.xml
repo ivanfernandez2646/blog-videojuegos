@@ -14,18 +14,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e5b8e62-ec5a-4d54-ae1a-5cae63e1eadb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e474ebca-9321-4612-baf4-27bbe9b331fb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e474ebca-9321-4612-baf4-27bbe9b331fb.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/blog-videojuegos.sql" beforeDir="false" afterPath="$PROJECT_DIR$/assets/blog-videojuegos.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create-article.php" beforeDir="false" afterPath="$PROJECT_DIR$/create-article.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create-category.php" beforeDir="false" afterPath="$PROJECT_DIR$/create-category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/log-in.php" beforeDir="false" afterPath="$PROJECT_DIR$/forms/log-in.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/helpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/nav.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/right-menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/right-menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forms/modify-my-data.php" beforeDir="false" afterPath="$PROJECT_DIR$/forms/modify-my-data.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +85,7 @@
       <workItem from="1601535323619" duration="82000" />
       <workItem from="1601535967912" duration="6299000" />
       <workItem from="1601650955844" duration="990000" />
+      <workItem from="1601813120902" duration="1525000" />
     </task>
     <servers />
   </component>
