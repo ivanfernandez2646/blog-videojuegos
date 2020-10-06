@@ -43,7 +43,7 @@
                     <article class="post">
                         <h3 class="title-post"><?=$article['title']?></h3>
                         <?php if (isset($_SESSION['sessionActive'])):?>
-                            <p class="p-info"><?=$article['datePublication'].' - '.$article['nameCategory'].' - '.$_SESSION['nameUser'].' '.$_SESSION['surnameUser']?></p>
+                            <p class="p-info"><?=$article['datePublication'].' - '.$article['nameCategory'].' - '.$article['fullNameUser']?></p>
                         <?php endif;?>
                         <p class="p-post">
                             <?=$article['description']?>

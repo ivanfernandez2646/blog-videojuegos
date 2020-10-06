@@ -41,24 +41,32 @@ function getArticles($categoryFilter = null, $allUsers = true){
 
         if($categoryFilter == null){
             if($allUsers){
-                $sql = "SELECT a.id, a.title, a.description, DATE_FORMAT(a.datePublication,'%d/%m/%Y') as 'datePublication', c.name as 'nameCategory' FROM articles a 
+                $sql = "SELECT a.id, a.title, a.description, DATE_FORMAT(a.datePublication,'%d/%m/%Y') as 'datePublication', c.name as 'nameCategory', CONCAT(u.name,' ',u.surname) as 'fullNameUser' 
+                    FROM articles a 
                     INNER JOIN categories c on a.category_id = c.id
+                    INNER JOIN users u on u.id = a.user_id
                     ORDER BY a.datePublication DESC";
             }else{
-                $sql = "SELECT a.id, a.title, a.description, DATE_FORMAT(a.datePublication,'%d/%m/%Y') as 'datePublication', c.name as 'nameCategory' FROM articles a 
+                $sql = "SELECT a.id, a.title, a.description, DATE_FORMAT(a.datePublication,'%d/%m/%Y') as 'datePublication', c.name as 'nameCategory', CONCAT(u.name,' ',u.surname) as 'fullNameUser' 
+                    FROM articles a 
                     INNER JOIN categories c on a.category_id = c.id
+                    INNER JOIN users u on u.id = a.user_id
                     WHERE a.user_id = ".$_SESSION['idUser']."
                     ORDER BY a.datePublication DESC";
             }
         }else{
             if($allUsers){
-                $sql = "SELECT a.id, a.title, a.description, DATE_FORMAT(a.datePublication,'%d/%m/%Y') as 'datePublication', c.name as 'nameCategory' FROM articles a 
-                    INNER JOIN categories c on a.category_id = c.id 
+                $sql = "SELECT a.id, a.title, a.description, DATE_FORMAT(a.datePublication,'%d/%m/%Y') as 'datePublication', c.name as 'nameCategory', CONCAT(u.name,' ',u.surname) as 'fullNameUser' 
+                    FROM articles a 
+                    INNER JOIN categories c on a.category_id = c.id
+                    INNER JOIN users u on u.id = a.user_id
                     WHERE c.id = ?
                     ORDER BY a.datePublication DESC";
             }else{
-                $sql = "SELECT a.id, a.title, a.description, DATE_FORMAT(a.datePublication,'%d/%m/%Y') as 'datePublication', c.name as 'nameCategory' FROM articles a 
-                    INNER JOIN categories c on a.category_id = c.id 
+                $sql = "SELECT a.id, a.title, a.description, DATE_FORMAT(a.datePublication,'%d/%m/%Y') as 'datePublication', c.name as 'nameCategory', CONCAT(u.name,' ',u.surname) as 'fullNameUser' 
+                    FROM articles a 
+                    INNER JOIN categories c on a.category_id = c.id             
+                    INNER JOIN users u on u.id = a.user_id
                     WHERE c.id = ? AND a.user_id = ".$_SESSION['idUser']."
                     ORDER BY a.datePublication DESC";
             }
