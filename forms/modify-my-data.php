@@ -15,10 +15,12 @@ function checkDuplicateEmail($newEmailUser)
         $stmt->store_result();
 
         if ($stmt->num_rows >= 1) {
+            $_SESSION['duplicateEmail'] = true;
             return true;
         }
     }
 
+    $_SESSION['duplicateEmail'] = false;
     return false;
 }
 
@@ -53,10 +55,10 @@ if (!empty($_GET['newNameUser'])
 
         if ($res) {
             $_SESSION['modifyData'] = true;
-            header("Location: ./../index.php");
+            header("Location: ./../my-data.php");
         } else {
             $_SESSION['modifyData'] = false;
-            header("Location: ./../index.php");
+            header("Location: ./../my-data.php");
         }
     } else {
         echo 'ERROR connecting MariaDB ' . mysqli_connect_errno();

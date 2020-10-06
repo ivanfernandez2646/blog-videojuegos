@@ -33,21 +33,35 @@ function getCategories(){
 }
 
 //ARTICLES
-function getArticles($categoryFilter = null){
+function getArticles($categoryFilter = null, $allUsers = true){
     $connDb = getConn();
 
     $articles = array();
     if($connDb){
 
         if($categoryFilter == null){
-            $sql = "SELECT a.id, a.title, a.description, DATE_FORMAT(a.datePublication,'%d/%m/%Y') as 'datePublication', c.name as 'nameCategory' FROM articles a 
-                    INNER JOIN categories c on a.category_id = c.id 
+            if($allUsers){
+                $sql = "SELECT a.id, a.title, a.description, DATE_FORMAT(a.datePublication,'%d/%m/%Y') as 'datePublication', c.name as 'nameCategory' FROM articles a 
+                    INNER JOIN categories c on a.category_id = c.id
                     ORDER BY a.datePublication DESC";
+            }else{
+                $sql = "SELECT a.id, a.title, a.description, DATE_FORMAT(a.datePublication,'%d/%m/%Y') as 'datePublication', c.name as 'nameCategory' FROM articles a 
+                    INNER JOIN categories c on a.category_id = c.id
+                    WHERE a.user_id = ".$_SESSION['idUser']."
+                    ORDER BY a.datePublication DESC";
+            }
         }else{
-            $sql = "SELECT a.id, a.title, a.description, DATE_FORMAT(a.datePublication,'%d/%m/%Y') as 'datePublication', c.name as 'nameCategory' FROM articles a 
+            if($allUsers){
+                $sql = "SELECT a.id, a.title, a.description, DATE_FORMAT(a.datePublication,'%d/%m/%Y') as 'datePublication', c.name as 'nameCategory' FROM articles a 
                     INNER JOIN categories c on a.category_id = c.id 
                     WHERE c.id = ?
                     ORDER BY a.datePublication DESC";
+            }else{
+                $sql = "SELECT a.id, a.title, a.description, DATE_FORMAT(a.datePublication,'%d/%m/%Y') as 'datePublication', c.name as 'nameCategory' FROM articles a 
+                    INNER JOIN categories c on a.category_id = c.id 
+                    WHERE c.id = ? AND a.user_id = ".$_SESSION['idUser']."
+                    ORDER BY a.datePublication DESC";
+            }
         }
 
         $stmt = $connDb -> prepare($sql);

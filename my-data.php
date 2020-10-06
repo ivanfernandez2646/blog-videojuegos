@@ -19,6 +19,15 @@ session_start();
     <section class="main-left box-shadows">
         <h2>Mis Datos</h2>
         <p>Modifica tus datos de una manera muy sencilla.</p>
+        <?php
+        if(isset($_SESSION['duplicateEmail'])):
+            if(!$_SESSION['duplicateEmail']):
+        ?>
+                <p class="alert-ok">Datos actualizados correctamente</p>
+            <?php else:?>
+                <p class="alert-ko">El email ya se encuentra registrado</p>
+            <?php endif;?>
+        <?php endif; unset($_SESSION['duplicateEmail'])?>
         <form id="formModifyMyData" class="formGeneric" action="./forms/modify-my-data.php" method="GET">
             <label for="newNameUser">Nombre:</label>
             <br/>

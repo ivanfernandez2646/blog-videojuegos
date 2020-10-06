@@ -16,8 +16,35 @@
                     <a id="aLogOut" href="./includes/log-out.php">Cerrar sesión</a>
                     <br/>
                 </article>
+                <br/>
+                <article class ="form-log-sign-in box-shadows">
+                    <h4>Modo personal</h4>
+                    <p class="p-info">Sólo podrás obtener tus artículos</p>
+                    <form id="changeModeAccess" action="<?php echo $_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'];?>" method="POST">
+                        <label class="switch">
+                            <?php
+                            if(isset($_POST['checkBoxModeAccess']) and $_POST['checkBoxModeAccess'] == 'on'):
+                                $_SESSION['selfMode'] = true;
+                            ?>
+                                <input id="checkBoxModeAccess" name="checkBoxModeAccess" type="checkbox" onchange="this.form.submit()" checked>
+                            <?php elseif(isset($_SESSION['selfMode']) and $_SESSION['selfMode'] and isset($_POST['checkBoxModeAccess'])):
+                                $_SESSION['selfMode'] = true;
+                            ?>
+                                <input id="checkBoxModeAccess" name="checkBoxModeAccess" type="checkbox" onchange="this.form.submit()" checked>
+                            <?php elseif(isset($_SESSION['selfMode']) and $_SESSION['selfMode'] and !isset($_POST['isFromChangeModeAccess'])):
+                                $_SESSION['selfMode'] = true;
+                            ?>
+                                <input id="checkBoxModeAccess" name="checkBoxModeAccess" type="checkbox" onchange="this.form.submit()" checked>
+                            <?php else:$_SESSION['selfMode'] = false;?>
+                                <input id="checkBoxModeAccess" name="checkBoxModeAccess" type="checkbox" onchange="this.form.submit()">
+                            <?php endif;?>
+                            <span class="slider round"></span>
+                        </label>
+                        <input id="isFromChangeModeAccess" name="isFromChangeModeAccess" type="checkbox" checked style="display: none;">
+                    </form>
+                </article>
             <?php else:
-                $addErrorLogIn = '<p class="log-in-ko">Se ha producido un error en el login</p>';
+                $addErrorLogIn = '<p class="alert-ko">Se ha producido un error en el login</p>';
             ?>
             <?php endif;?>
         <?php endif;?>
@@ -48,9 +75,9 @@
                         $res = $_SESSION['register'];
                         if ($res):
             ?>
-                            <p class="sign-in-ok">Registro realizado correctamente</p>
+                            <p class="alert-ok">Registro realizado correctamente</p>
                         <?php else: ?>
-                            <p class="sign-in-ko">Se ha producido un error en el registro</p>
+                            <p class="alert-ko">Se ha producido un error en el registro</p>
                         <?php endif; ?>
                     <?php endif; ?>
             <?php endif; ?>
