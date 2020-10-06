@@ -26,6 +26,27 @@ html, body{
     color: indianred;
 }
 
+.title-post{
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: dodgerblue;
+}
+
+.title-post a{
+    text-decoration: dodgerblue;
+    color: inherit;
+    margin: 0;
+}
+
+.title-post a:hover{
+    color: indianred;
+}
+
+.title-selected-post{
+    color: dodgerblue;
+    margin-bottom: 20px !important;
+}
+
 /* NAV */
 .nav-main-menu{
     margin-top: 30px;

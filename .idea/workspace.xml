@@ -15,7 +15,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3e5b8e62-ec5a-4d54-ae1a-5cae63e1eadb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/helpers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/right-menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/right-menu.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +92,7 @@
       <workItem from="1601899527496" duration="7741000" />
       <workItem from="1601966638657" duration="2773000" />
       <workItem from="1601970693130" duration="671000" />
-      <workItem from="1601975643771" duration="699000" />
+      <workItem from="1601975643771" duration="4500000" />
     </task>
     <servers />
   </component>
@@ -164,9 +166,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601132179852" />
-    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1601900669277">
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1601981865391">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601900669277" />
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601981865391" />
   </component>
 </project>

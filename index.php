@@ -22,7 +22,8 @@
         <!-- MAIN -->
         <main>
             <section class="main-left box-shadows">
-                <h2>Últimas Entradas</h2>
+                <?php if(empty($_GET['article'])):?>
+                    <h2>Últimas Entradas</h2>
                 <?php
                     if(!empty($_GET['category'])){
                         if((isset($_SESSION['selfMode']) and $_SESSION['selfMode'] and empty($_POST['isFromChangeModeAccess'])) or !empty($_POST['checkBoxModeAccess'])){
@@ -41,15 +42,26 @@
                     foreach($articles as $article):
                 ?>
                     <article class="post">
-                        <h3 class="title-post"><?=$article['title']?></h3>
+                        <h3 class="title-post"><a href="./index.php?article=<?=$article['id']?>"><?=$article['title']?></a></h3>
                         <?php if (isset($_SESSION['sessionActive'])):?>
                             <p class="p-info"><?=$article['datePublication'].' - '.$article['nameCategory'].' - '.$article['fullNameUser']?></p>
                         <?php endif;?>
                         <p class="p-post">
-                            <?=$article['description']?>
+                            <?=$article['shortDescription']?>
                         </p>
                     </article>
                 <?php endforeach;?>
+                <?php else: $selectedArticle = getArticle($_GET['article'])?>
+                    <h2 class="title-selected-post"><?=$selectedArticle['title']?></h2>
+                    <article class="post">
+                        <?php if (isset($_SESSION['sessionActive'])):?>
+                            <p class="p-info"><?=$selectedArticle['datePublication'].' - '.$selectedArticle['nameCategory'].' - '.$selectedArticle['fullNameUser']?></p>
+                        <?php endif;?>
+                        <p class="p-post">
+                            <?=$selectedArticle['description']?>
+                        </p>
+                    </article>
+                <?php endif;?>
             </section>
             <?php require_once('./includes/right-menu.php'); ?>
         </main>
