@@ -197,6 +197,23 @@ main{
     width: 300px;
 }
 
+.buttonHolder{
+    text-align: center;
+}
+
+#formAllArticles{
+    margin-right: 0;
+}
+
+#btAllArticles{
+    border: none; /* To view changes */
+    background-color: dodgerblue;
+    color: white;
+    width: 180px;
+    height: 60px;
+    margin-bottom: 20px;
+}
+
 
 /* CREATE CATEGORY */
 .formGeneric{

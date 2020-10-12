@@ -25,17 +25,19 @@
                 <?php if(empty($_GET['article'])):?>
                     <h2>Últimas Entradas</h2>
                 <?php
+                    $allArticles = !empty($_GET['allArticles']) ? $_GET['allArticles'] : false;
+
                     if(!empty($_GET['category'])){
                         if((isset($_SESSION['selfMode']) and $_SESSION['selfMode'] and empty($_POST['isFromChangeModeAccess'])) or !empty($_POST['checkBoxModeAccess'])){
-                            $articles = getArticles($_GET['category'], false);
+                            $articles = getArticles($allArticles, $_GET['category'], false);
                         }else{
-                            $articles = getArticles($_GET['category']);
+                            $articles = getArticles($allArticles, $_GET['category']);
                         }
                     }else{
                         if((isset($_SESSION['selfMode']) and $_SESSION['selfMode'] and empty($_POST['isFromChangeModeAccess'])) or !empty($_POST['checkBoxModeAccess'])){
-                            $articles = getArticles(null, false);
+                            $articles = getArticles($allArticles, null, false);
                         }else{
-                            $articles = getArticles();
+                            $articles = getArticles($allArticles);
                         }
                     }
 
@@ -51,6 +53,13 @@
                         </p>
                     </article>
                 <?php endforeach;?>
+                    <?php if(!$allArticles):?>
+                        <form id="formAllArticles" action="<?php echo $_SERVER['PHP_SELF'].'?allArticles=true';?>" method="POST">
+                            <div class="buttonHolder">
+                                <input id="btAllArticles" type="submit" value="Ver todas las entradas"/>
+                            </div>
+                        </form>
+                    <?php endif;?>
                 <?php else: $selectedArticle = getArticle($_GET['article'])?>
                     <h2 class="title-selected-post"><?=$selectedArticle['title']?></h2>
                     <article class="post">

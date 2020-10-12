@@ -33,7 +33,7 @@ function getCategories(){
 }
 
 //ARTICLES
-function getArticles($categoryFilter = null, $allUsers = true){
+function getArticles($allArticles, $categoryFilter = null, $allUsers = true){
     $connDb = getConn();
 
     $articles = array();
@@ -41,35 +41,59 @@ function getArticles($categoryFilter = null, $allUsers = true){
 
         if($categoryFilter == null){
             if($allUsers){
-                $sql = "SELECT a.id, a.title, CONCAT(SUBSTRING(description, 1, 500),'...') as 'shortDescription', DATE_FORMAT(a.datePublication,'%d/%m/%Y') as 'datePublication', c.name as 'nameCategory', CONCAT(u.name,' ',u.surname) as 'fullNameUser' 
-                    FROM articles a 
-                    INNER JOIN categories c on a.category_id = c.id
-                    INNER JOIN users u on u.id = a.user_id
-                    ORDER BY a.datePublication DESC";
+                $sql = "SELECT a.id, a.title, CASE
+                        WHEN LENGTH(description) > 500 
+                            THEN CONCAT(SUBSTRING(description, 1, 500),'...')
+                            ELSE description
+                            END AS shortDescription, 
+                        DATE_FORMAT(a.datePublication,'%d/%m/%Y') as 'datePublication', c.name as 'nameCategory', CONCAT(u.name,' ',u.surname) as 'fullNameUser' 
+                        FROM articles a 
+                        INNER JOIN categories c on a.category_id = c.id
+                        INNER JOIN users u on u.id = a.user_id
+                        ORDER BY a.datePublication DESC";
             }else{
-                $sql = "SELECT a.id, a.title, CONCAT(SUBSTRING(description, 1, 500),'...') as 'shortDescription', DATE_FORMAT(a.datePublication,'%d/%m/%Y') as 'datePublication', c.name as 'nameCategory', CONCAT(u.name,' ',u.surname) as 'fullNameUser' 
-                    FROM articles a 
-                    INNER JOIN categories c on a.category_id = c.id
-                    INNER JOIN users u on u.id = a.user_id
-                    WHERE a.user_id = ".$_SESSION['idUser']."
-                    ORDER BY a.datePublication DESC";
+                $sql = "SELECT a.id, a.title, CASE
+                        WHEN LENGTH(description) > 500
+                            THEN CONCAT(SUBSTRING(description, 1, 500),'...')
+                            ELSE description
+                            END AS shortDescription, 
+                        DATE_FORMAT(a.datePublication,'%d/%m/%Y') as 'datePublication', c.name as 'nameCategory', CONCAT(u.name,' ',u.surname) as 'fullNameUser' 
+                        FROM articles a 
+                        INNER JOIN categories c on a.category_id = c.id
+                        INNER JOIN users u on u.id = a.user_id
+                        WHERE a.user_id = ".$_SESSION['idUser']."
+                        ORDER BY a.datePublication DESC";
             }
         }else{
             if($allUsers){
-                $sql = "SELECT a.id, a.title, CONCAT(SUBSTRING(description, 1, 500),'...') as 'shortDescription', DATE_FORMAT(a.datePublication,'%d/%m/%Y') as 'datePublication', c.name as 'nameCategory', CONCAT(u.name,' ',u.surname) as 'fullNameUser' 
-                    FROM articles a 
-                    INNER JOIN categories c on a.category_id = c.id
-                    INNER JOIN users u on u.id = a.user_id
-                    WHERE c.id = ?
-                    ORDER BY a.datePublication DESC";
+                $sql = "SELECT a.id, a.title, CASE
+                        WHEN LENGTH(description) > 500
+                            THEN CONCAT(SUBSTRING(description, 1, 500),'...')
+                            ELSE description
+                            END AS shortDescription, 
+                        DATE_FORMAT(a.datePublication,'%d/%m/%Y') as 'datePublication', c.name as 'nameCategory', CONCAT(u.name,' ',u.surname) as 'fullNameUser' 
+                        FROM articles a 
+                        INNER JOIN categories c on a.category_id = c.id
+                        INNER JOIN users u on u.id = a.user_id
+                        WHERE c.id = ?
+                        ORDER BY a.datePublication DESC";
             }else{
-                $sql = "SELECT a.id, a.title, CONCAT(SUBSTRING(description, 1, 500),'...') as 'shortDescription', DATE_FORMAT(a.datePublication,'%d/%m/%Y') as 'datePublication', c.name as 'nameCategory', CONCAT(u.name,' ',u.surname) as 'fullNameUser' 
-                    FROM articles a 
-                    INNER JOIN categories c on a.category_id = c.id             
-                    INNER JOIN users u on u.id = a.user_id
-                    WHERE c.id = ? AND a.user_id = ".$_SESSION['idUser']."
-                    ORDER BY a.datePublication DESC";
+                $sql = "SELECT a.id, a.title, CASE
+                        WHEN LENGTH(description) > 500
+                            THEN CONCAT(SUBSTRING(description, 1, 500),'...')
+                            ELSE description
+                            END AS shortDescription, 
+                        DATE_FORMAT(a.datePublication,'%d/%m/%Y') as 'datePublication', c.name as 'nameCategory', CONCAT(u.name,' ',u.surname) as 'fullNameUser' 
+                        FROM articles a 
+                        INNER JOIN categories c on a.category_id = c.id             
+                        INNER JOIN users u on u.id = a.user_id
+                        WHERE c.id = ? AND a.user_id = ".$_SESSION['idUser']."
+                        ORDER BY a.datePublication DESC";
             }
+        }
+
+        if(!$allArticles){
+            $sql = $sql." LIMIT 5";
         }
 
         $stmt = $connDb -> prepare($sql);
