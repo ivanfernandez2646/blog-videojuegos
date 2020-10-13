@@ -17,7 +17,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/helpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/right-menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/right-menu.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,6 +95,7 @@
       <workItem from="1602083859204" duration="242000" />
       <workItem from="1602232584170" duration="714000" />
       <workItem from="1602500801470" duration="4586000" />
+      <workItem from="1602591247206" duration="2409000" />
     </task>
     <servers />
   </component>

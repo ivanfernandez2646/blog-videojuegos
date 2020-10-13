@@ -45,9 +45,7 @@
                 ?>
                     <article class="post">
                         <h3 class="title-post"><a href="./index.php?article=<?=$article['id']?>"><?=$article['title']?></a></h3>
-                        <?php if (isset($_SESSION['sessionActive'])):?>
-                            <p class="p-info"><?=$article['datePublication'].' - '.$article['nameCategory'].' - '.$article['fullNameUser']?></p>
-                        <?php endif;?>
+                        <p class="p-info"><?=$article['datePublication'].' - '.$article['nameCategory'].' - '.$article['fullNameUser']?></p>
                         <p class="p-post">
                             <?=$article['shortDescription']?>
                         </p>
@@ -63,13 +61,17 @@
                 <?php else: $selectedArticle = getArticle($_GET['article'])?>
                     <h2 class="title-selected-post"><?=$selectedArticle['title']?></h2>
                     <article class="post">
-                        <?php if (isset($_SESSION['sessionActive'])):?>
-                            <p class="p-info"><?=$selectedArticle['datePublication'].' - '.$selectedArticle['nameCategory'].' - '.$selectedArticle['fullNameUser']?></p>
-                        <?php endif;?>
+                        <p class="p-info"><?=$selectedArticle['datePublication'].' - '.$selectedArticle['nameCategory'].' - '.$selectedArticle['fullNameUser']?></p>
                         <p class="p-post">
                             <?=$selectedArticle['description']?>
                         </p>
                     </article>
+                    <?php if(!empty($_SESSION['idUser'])):?>
+                        <?php if($selectedArticle['userId'] == $_SESSION['idUser']):?>
+                            <a id="aEditArticle" class="mdArticle" href="<?=$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'].'&edit=1'?> ">Editar entrada</a>
+                            <a id="aDeleteArticle" class="mdArticle" href="<?=$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'].'&delete=1'?> ">Borrar entrada</a>
+                        <?php endif;?>
+                    <?php endif;?>
                 <?php endif;?>
             </section>
             <?php require_once('./includes/right-menu.php'); ?>

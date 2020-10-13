@@ -119,7 +119,7 @@ function getArticle($articleId){
     $article = null;
     if($connDb){
 
-        $sql = "SELECT a.id, a.title, a.description, DATE_FORMAT(a.datePublication,'%d/%m/%Y') as 'datePublication', c.name as 'nameCategory', CONCAT(u.name,' ',u.surname) as 'fullNameUser' 
+        $sql = "SELECT a.id, a.title, a.description, DATE_FORMAT(a.datePublication,'%d/%m/%Y') as 'datePublication', c.name as 'nameCategory', CONCAT(u.name,' ',u.surname) as 'fullNameUser', u.id as 'userId'
             FROM articles a 
             INNER JOIN categories c on a.category_id = c.id
             INNER JOIN users u on u.id = a.user_id

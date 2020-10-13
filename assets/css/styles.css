@@ -169,32 +169,27 @@ main{
     display: block;
     color: black;
     text-decoration: none;
-    vertical-align: middle;
     text-align: center;
-    width: 200px;
-    height: 30px;
-    line-height: 30px;
+    width: 300px;
+    height: 50px;
+    line-height: 50px;
     margin-bottom: 10px;
 }
 
 #aLogOut{
     background-color: red;
-    width: 300px;
 }
 
 #aCreateArticle{
     background-color: green;
-    width: 300px;
 }
 
 #aCreateCategory{
     background-color: dodgerblue;
-    width: 300px;
 }
 
 #aMyData{
     background-color: darkorange;
-    width: 300px;
 }
 
 .buttonHolder{
@@ -214,6 +209,33 @@ main{
     margin-bottom: 20px;
 }
 
+/* VIEW ARTICLE */
+.mdArticle{
+    display: block;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 10px;
+}
+
+#aEditArticle{
+    font-family: Arial, serif;
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+    background-color: green;
+}
+
+#aDeleteArticle{
+    font-family: Arial, serif;
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+    background-color: dodgerblue;
+}
 
 /* CREATE CATEGORY */
 .formGeneric{
@@ -291,7 +313,7 @@ button, input[type=submit]{
     display: inline-block;
     width: 60px;
     height: 34px;
-    left: calc(240px / 2 - 60px / 2);
+    left: calc(340px / 2 - 60px / 2);
     margin-bottom: 15px;
 }
 
