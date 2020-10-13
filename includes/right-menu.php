@@ -20,7 +20,7 @@
                 <article class ="form-log-sign-in box-shadows">
                     <h4>Modo personal</h4>
                     <p class="p-info">Sólo podrás visualizar tus artículos</p>
-                    <form id="changeModeAccess" action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
+                    <form id="changeModeAccess" action="<?php echo $_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'];?>" method="POST">
                         <label class="switch">
                             <?php
                             if(isset($_POST['checkBoxModeAccess']) and $_POST['checkBoxModeAccess'] == 'on'):
