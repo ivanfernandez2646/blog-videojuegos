@@ -68,8 +68,10 @@
                     </article>
                     <?php if(!empty($_SESSION['idUser'])):?>
                         <?php if($selectedArticle['userId'] == $_SESSION['idUser']):?>
-                            <a id="aEditArticle" class="mdArticle" href="<?=$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'].'&edit=1'?> ">Editar entrada</a>
-                            <a id="aDeleteArticle" class="mdArticle" href="<?=$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'].'&delete=1'?> ">Borrar entrada</a>
+                            <a id="aEditArticle" class="mdArticle">Editar entrada</a>
+                            <a id="aDeleteArticle" class="mdArticle" href="<?='./forms/delete-article.php?idArticle='.$selectedArticle['id']?> ">Borrar entrada</a>
+                            <a id="aSaveChanges" class="mdArticle">Guardar cambios</a>
+                            <a id="aReverseChanges" class="mdArticle"">Deshacer cambios</a>
                         <?php endif;?>
                     <?php endif;?>
                 <?php endif;?>
@@ -78,5 +80,6 @@
         </main>
         <!-- FOOTER -->
         <?php require_once('./includes/footer.php'); ?>
+        <script type="application/javascript" src="index.js"></script>
     </body>
 </html>

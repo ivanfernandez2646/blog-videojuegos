@@ -16,7 +16,6 @@
     <list default="true" id="3e5b8e62-ec5a-4d54-ae1a-5cae63e1eadb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/helpers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +30,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -96,6 +96,7 @@
       <workItem from="1602232584170" duration="714000" />
       <workItem from="1602500801470" duration="4586000" />
       <workItem from="1602591247206" duration="2409000" />
+      <workItem from="1602599169966" duration="4042000" />
     </task>
     <servers />
   </component>
@@ -137,10 +138,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="720" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1601300681515" />
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1601972054215">
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1602603249525">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601972054215" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602603249525" />
     <state width="1288" height="282" key="GridCell.Tab.0.bottom" timestamp="1602504071318">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -157,10 +158,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1288" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602504071318" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1601543172224">
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1602603019854">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601543172224" />
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602603019854" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1601119527039">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -169,9 +170,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601132179852" />
-    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1601981865391">
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1602601051788">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601981865391" />
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1602601051788" />
   </component>
 </project>

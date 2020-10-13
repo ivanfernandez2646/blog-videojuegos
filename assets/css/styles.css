@@ -226,7 +226,8 @@ main{
     font-size: 14px;
     color: white;
     text-decoration: none;
-    background-color: green;
+    background-color: darkorange;
+    cursor: pointer;
 }
 
 #aDeleteArticle{
@@ -234,7 +235,27 @@ main{
     font-size: 14px;
     color: white;
     text-decoration: none;
+    background-color: red;
+}
+
+#aSaveChanges{
+    font-family: Arial, serif;
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+    background-color: green;
+    cursor: pointer;
+    display: none;
+}
+
+#aReverseChanges{
+    font-family: Arial, serif;
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
     background-color: dodgerblue;
+    cursor: pointer;
+    display: none;
 }
 
 /* CREATE CATEGORY */
