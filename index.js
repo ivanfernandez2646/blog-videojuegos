@@ -32,6 +32,9 @@ function deactivateContentEditableArticle(evt){
 }
 
 function saveEditionOfArticle(){
-    window.location = './forms/modify-article.php';
+    let paramsFromPHPURL = (new URL(document.location)).searchParams;
+    let idArticle = paramsFromPHPURL.get('article');
+    let newUrl = './forms/modify-article.php?idArticle=' + idArticle + '&titleArticle=' + titleArticle.textContent + '&descriptionArticle=' + bodyArticle.textContent;
+    window.location = encodeURI(newUrl);
 }
 
