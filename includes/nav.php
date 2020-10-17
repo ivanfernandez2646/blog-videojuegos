@@ -3,11 +3,13 @@
         <li><a href="./index.php">Inicio</a></li><!--
         <?php
             $categories = getCategories();
-            foreach ($categories as $category):
+            foreach ($categories as $key=>$category):
+                if($key + 1 < count($categories)):
         ?>
-        --><li><a href="./index.php?category=<?=$category['id']?>"><?=$category['name']?></a></li><!--
+                    --><li><a href="./index.php?category=<?=$category['id']?>"><?=$category['name']?></a></li><!--
+                <?php else:?>
+                    --><li><a href="./index.php?category=<?=$category['id']?>"><?=$category['name']?></a></li>
+                <?php endif?>
         <?php endforeach;?>
-        --><li><a href="#">Sobre nosotros</a></li><!--
-        --><li><a href="#">Contacto</a></li>
     </ul>
 </nav>

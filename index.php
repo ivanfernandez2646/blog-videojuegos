@@ -26,18 +26,19 @@
                     <h2>Últimas Entradas</h2>
                 <?php
                     $allArticles = !empty($_GET['allArticles']) ? $_GET['allArticles'] : false;
+                    $isMaxArticlesReached = true;
 
                     if(!empty($_GET['category'])){
                         if((isset($_SESSION['selfMode']) and $_SESSION['selfMode'] and empty($_POST['isFromChangeModeAccess'])) or !empty($_POST['checkBoxModeAccess'])){
-                            $articles = getArticles($allArticles, $_GET['category'], false);
+                            $articles = getArticles($allArticles,$isMaxArticlesReached, $_GET['category'], false);
                         }else{
-                            $articles = getArticles($allArticles, $_GET['category']);
+                            $articles = getArticles($allArticles, $isMaxArticlesReached, $_GET['category']);
                         }
                     }else{
                         if((isset($_SESSION['selfMode']) and $_SESSION['selfMode'] and empty($_POST['isFromChangeModeAccess'])) or !empty($_POST['checkBoxModeAccess'])){
-                            $articles = getArticles($allArticles, null, false);
+                            $articles = getArticles($allArticles, $isMaxArticlesReached,null, false);
                         }else{
-                            $articles = getArticles($allArticles);
+                            $articles = getArticles($allArticles, $isMaxArticlesReached);
                         }
                     }
 
@@ -51,12 +52,16 @@
                         </p>
                     </article>
                 <?php endforeach;?>
-                    <?php if(!$allArticles):?>
-                        <form id="formAllArticles" action="<?php echo $_SERVER['PHP_SELF'].'?allArticles=true';?>" method="POST">
-                            <div class="buttonHolder">
-                                <input id="btAllArticles" type="submit" value="Ver todas las entradas"/>
-                            </div>
-                        </form>
+                    <?php if(count($articles) != 0):?>
+                        <?php if((!$allArticles) && !$isMaxArticlesReached):?>
+                            <form id="formAllArticles" action="<?php echo $_SERVER['PHP_SELF'].'?allArticles=true';?>" method="POST">
+                                <div class="buttonHolder">
+                                    <input id="btAllArticles" type="submit" value="Ver todas las entradas"/>
+                                </div>
+                            </form>
+                        <?php endif;?>
+                    <?php else:?>
+                        <p>No hay entradas</p>
                     <?php endif;?>
                 <?php else: $selectedArticle = getArticle($_GET['article'])?>
                     <h2 class="title-selected-post"><?=$selectedArticle['title']?></h2>
@@ -80,6 +85,10 @@
         </main>
         <!-- FOOTER -->
         <?php require_once('./includes/footer.php'); ?>
-        <script type="application/javascript" src="index.js"></script>
+        <?php if(!empty($_GET['article'])):?>
+            <?php if($selectedArticle['userId'] == $_SESSION['idUser']):?>
+                <script type="application/javascript" src="index.js"></script>
+            <?php endif;?>
+        <?php endif;?>
     </body>
 </html>

@@ -1,5 +1,7 @@
 <?php
 
+const LIMIT_ARTICLES = 5;
+
 //BBDD
 function getConn(){
     $dbHost = 'localhost';
@@ -33,7 +35,7 @@ function getCategories(){
 }
 
 //ARTICLES
-function getArticles($allArticles, $categoryFilter = null, $allUsers = true){
+function getArticles($allArticles, &$isMaxArticlesReached = true, $categoryFilter = null, $allUsers = true){
     $connDb = getConn();
 
     $articles = array();
@@ -93,7 +95,11 @@ function getArticles($allArticles, $categoryFilter = null, $allUsers = true){
         }
 
         if(!$allArticles){
-            $sql = $sql." LIMIT 5";
+            //We split the original sql from the word "FROM" and execute the same query with a COUNT(*)
+            //We use this for set the &$isMaxArticlesReached to know if is necessary to include button "Ver más entradas" or all are already been retrieved.
+            //ONLY FOR OPTIMIZATION AND USABILITY.
+            $maxArticles = getMaxArticles($sql, $categoryFilter);
+            $sql = $sql." LIMIT ".LIMIT_ARTICLES;
         }
 
         $stmt = $connDb -> prepare($sql);
@@ -104,6 +110,10 @@ function getArticles($allArticles, $categoryFilter = null, $allUsers = true){
 
         $stmt -> execute();
         $result = $stmt -> get_result();
+
+        if(!$allArticles && ($result -> num_rows < $maxArticles)){
+            $isMaxArticlesReached = false;
+        }
 
         while($row = $result -> fetch_assoc()){
             $articles[] = $row;
@@ -133,4 +143,21 @@ function getArticle($articleId){
     }
 
     return $article;
+}
+
+function getMaxArticles($sql, $categoryFilter){
+    $connDb = getConn();
+
+    $sqlIsMaxArticlesReached = "SELECT COUNT(*) as MaxArticles FROM".explode("FROM", $sql)[1];
+
+    $stmt = $connDb -> prepare($sqlIsMaxArticlesReached);
+
+    if($categoryFilter != null){
+        $stmt -> bind_param('i', $categoryFilter);
+    }
+
+    $stmt -> execute();
+    $result = $stmt -> get_result();
+
+    return $result->fetch_row()[0];
 }
