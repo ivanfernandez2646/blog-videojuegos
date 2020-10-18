@@ -8,7 +8,7 @@
     </root>
     <schema id="2" parent="1" name="blog_videojuegos">
       <Current>1</Current>
-      <Collation>latin1_swedish_ci</Collation>
+      <Collation>utf8_general_ci</Collation>
     </schema>
     <schema id="3" parent="1" name="concesionario">
       <Collation>latin1_swedish_ci</Collation>
@@ -1089,7 +1089,7 @@
     </column>
     <column id="347" parent="340" name="description">
       <Position>5</Position>
-      <DataType>varchar(50000)|0s</DataType>
+      <DataType>varchar(10000)|0s</DataType>
     </column>
     <column id="348" parent="340" name="datePublication">
       <Position>6</Position>

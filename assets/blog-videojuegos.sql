@@ -23,7 +23,7 @@ CREATE TABLE articles(
     user_id int not null,
     category_id int not null,
     title varchar(100) not null,
-    description varchar(50000),
+    description varchar(10000),
     datePublication datetime not null default now(),
     CONSTRAINT pk_idArticle PRIMARY KEY(id),
     CONSTRAINT fk_articles_users FOREIGN KEY(user_id) REFERENCES users(id),
